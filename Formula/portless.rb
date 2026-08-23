@@ -6,7 +6,6 @@ class Portless < Formula
   desc "Local application-environment control plane"
   homepage "https://www.portless.run"
   url "https://github.com/runportless/portless/releases/download/v0.1.0-alpha.3/portless_0.1.0-alpha.3_source.tar.gz"
-  version "0.1.0-alpha.3"
   sha256 "3fe4fc5e2e57404cad24f5cd47f5f15354cc287c2302ead15ee1cc521e3925fd"
   license "Apache-2.0"
   head "https://github.com/runportless/portless.git", branch: "main"
