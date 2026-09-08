@@ -10,6 +10,11 @@ class Portless < Formula
   license "Apache-2.0"
   head "https://github.com/runportless/portless.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/runportless/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "4f66fd4406e59e4cbd3f31a84221961950049d9319b91dcba13715097874b239"
+  end
+
   depends_on "go" => :build
   depends_on :macos
 
