@@ -8,6 +8,7 @@ on:
 
 jobs:
   test-bot:
+    timeout-minutes: 20
     strategy:
       matrix:
         os: [ macos-15-intel, macos-26 ]
@@ -41,6 +42,8 @@ jobs:
       - run: brew test-bot --only-setup
 
       - run: brew test-bot --only-tap-syntax
+        # This checks every OS/architecture; keep its linter dependencies on Linux.
+        if: runner.os == 'Linux'
       - name: Base64-encode GITHUB_TOKEN for HOMEBREW_DOCKER_REGISTRY_TOKEN
         id: base64-encode
         if: github.event_name == 'pull_request'
